@@ -26,8 +26,8 @@ def check_tcp_port(kw, timeout=3):
 
 def check_ping(ip):
     ip_address = ip
-    ret=os.system('ping -c 4 -W 2 '+ip_address+' &> /dev/null')
-    if ret==0:
+    ret=os.system('ping -c 2 -W 1 '+ip_address+' &> /dev/null')
+    if ret:
         return {"status": "fail", "message": "icmp fail",
                     "info": "icmp check"}
     else:
